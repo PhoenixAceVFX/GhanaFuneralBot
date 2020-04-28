@@ -59,7 +59,7 @@ clients[1].on('message', async (message) => {
 			await sleep(18000)
 			connection.disconnect();
 		}
-		if(message.content === (`${prefix}leave`))
+		if(message.content === (`${prefix}leave`) && message.member.hasPermission("ADMINISTRATOR"))
 		{
 			message.member.voice.channel.leave();	
 		}

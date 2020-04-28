@@ -16,3 +16,16 @@ If the bots wont leave for some reason, !g leave is an alternative.
 
 # Current Bugs
 - If called in multiple voice chats in the same server, can cause errors. 
+
+# Test Invite
+This invite won't be for long due to a lack of place for me to host it, you need to invite 7 bots in total.
+
+[Main Bot](https://discordapp.com/oauth2/authorize?client_id=704560496971481108&permissions=36766720&scope=bot)
+[Henchmen 1](https://discordapp.com/oauth2/authorize?client_id=704560792468586576&permissions=36766720&scope=bot)
+[Henchmen 2](https://discordapp.com/oauth2/authorize?client_id=704560849947328573&permissions=36766720&scope=bot)
+[Henchmen 3](https://discordapp.com/oauth2/authorize?client_id=704560872126676992&permissions=36766720&scope=bot)
+[Henchmen 4](https://discordapp.com/oauth2/authorize?client_id=704560893207380010&permissions=36766720&scope=bot)
+[Henchmen 5](https://discordapp.com/oauth2/authorize?client_id=704078743575986257&permissions=36766720&scope=bot)
+[Coffin](https://discordapp.com/oauth2/authorize?client_id=704077241428082858&permissions=36766720&scope=bot)
+
+Feel free to report any bugs to me at shaftAndi#1825

@@ -4,15 +4,17 @@ const clients = [new Discord.Client(),new Discord.Client(),new Discord.Client(),
 var tokens = [token_guy1, token_guy2, token_guy3, token_guy4, token_guy5, token_guy6,token_coffin];
 
 //Okay before I get destroyed, I suck at programming, Im already aware
+//Feel free to add on and fix things!
 
-for(var i = 0; i < clients.length; i++)
+
+for(var i = 0; i < clients.length; i++)	//Loops through all clients to login
 {
 	clients[i].login(tokens[i]);
 	console.log("Client " + i + " has logged in.");
 }
-console.log("exit loop");
+console.log("All bots are logged in");	
 
-clients[0].once('ready', () => {
+clients[0].once('ready', () => {	//Just sets status
     console.log('Ready!');
 	clients[0].user.setActivity("Astronomia", { type: "LISTENING"});
 });
@@ -22,7 +24,7 @@ clients[0].on('message', async (message) => {
 	if(message.content === (`${prefix}join`) && message.member.hasPermission("ADMINISTRATOR"))
 	{	
 		console.log(message.member.voice.channel.id)
-		let channel_info = message.member.guild.voiceStates.cache.find(user => user.id == message.author.id)
+		let channel_info = message.member.guild.voiceStates.cache.find(user => user.id == message.author.id)	//Unused but can potentially be used to limit voice channels in the future
 
 		console.log("command recieved")
 		const connection = await message.member.voice.channel.join();
@@ -37,7 +39,7 @@ clients[0].on('message', async (message) => {
 			connection.disconnect();
 		});
 	}
-	if(message.content === (`${prefix}leave`) && message.member.hasPermission("ADMINISTRATOR"))
+	if(message.content === (`${prefix}leave`) && message.member.hasPermission("ADMINISTRATOR"))	//Force leave if needed
 		{
 			message.member.voice.channel.leave();	
 		}

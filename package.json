@@ -1,0 +1,10 @@
+{
+  "name": "ghanabot",
+  "version": "1.0.0",
+  "description": "Ghana Funeral Bot Meme",
+  "main": "main.js",
+  "author": "Andi and Kyle",
+  "dependencies": {
+    "discord.js": "github:discordjs/discord.js"
+  }
+}

@@ -1,6 +1,8 @@
 # Ghana Funeral Bot
 A Discord Bot that takes 7 tokens to mass join 1 voice channel to play Astronomia
 
+[Example](https://gfycat.com/delightfulsillykronosaurus)
+
 # How to setup
 Clone the repo and be sure you have nodejs version 12.0 or later installed.
 

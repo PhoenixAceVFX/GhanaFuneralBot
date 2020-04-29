@@ -32,4 +32,4 @@ This invite won't be for long due to a lack of place for me to host it, you need
 - [Henchmen 5](https://discordapp.com/oauth2/authorize?client_id=704078743575986257&permissions=36766720&scope=bot)
 - [Coffin](https://discordapp.com/oauth2/authorize?client_id=704077241428082858&permissions=36766720&scope=bot)
 
-Feel free to report any bugs to me at shaftAndi#1825
+Feel free to report any bugs to me at shaftAndi#1825 or [join my server and ask away in #support](http://discord.gg/ZukG6P4)

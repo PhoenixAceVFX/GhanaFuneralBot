@@ -30,11 +30,11 @@ clients[0].on('message', async (message) => {
 		const dispatcher = connection.play('./Astronomia.mp3');
 
 		dispatcher.on('start', () => {
-			console.log('Astronomia now playing in: ' + message.member.voice.channel.id);
+			console.log('Astronomia now playing in');
 		});
 
 		dispatcher.on('finish', () => {
-			console.log('Astronomia done playing in: ' + message.member.voice.channel.id);
+			console.log('Astronomia done playing');
 			connection.disconnect();
 		});
 	}

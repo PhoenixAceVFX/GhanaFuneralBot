@@ -51,7 +51,7 @@ clients[0].on('message', async (message) => {
                 .setDescription('Benjamin and his Henchmen will join your voice channel and play Astronomia! A neato fun bot!')
                 .setThumbnail('https://media1.tenor.com/images/c0bfc4509ae66de179e7499517031dc8/tenor.gif')
                 .addFields(
-					{ name: 'Commands', value: '' },
+					{ name: '- !g help', value: 'This command...' },
 					{ name: '- !g join', value: 'Joins the voice channel you are in' },
 					{ name: '- !g leave', value: 'Leaves the voice channel incase needed!' }
                 );

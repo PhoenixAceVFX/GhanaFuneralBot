@@ -6,12 +6,12 @@ A Discord Bot that takes 7 tokens to mass join 1 voice channel to play Astronomi
 # Invite
 If you don't wish to self-host, that's alright. Here are the invite links to all the bots! Grab them quick before 100 servers take them all!
 
-- [Main Bot](https://discordapp.com/oauth2/authorize?client_id=704560496971481108&permissions=36766720&scope=bot)
-- [Henchmen 1](https://discordapp.com/oauth2/authorize?client_id=704560792468586576&permissions=36766720&scope=bot)
-- [Henchmen 2](https://discordapp.com/oauth2/authorize?client_id=704560849947328573&permissions=36766720&scope=bot)
-- [Henchmen 3](https://discordapp.com/oauth2/authorize?client_id=704560872126676992&permissions=36766720&scope=bot)
-- [Henchmen 4](https://discordapp.com/oauth2/authorize?client_id=704560893207380010&permissions=36766720&scope=bot)
-- [Henchmen 5](https://discordapp.com/oauth2/authorize?client_id=704078743575986257&permissions=36766720&scope=bot)
+- [Main Bot](https://discordapp.com/oauth2/authorize?client_id=704560496971481108&permissions=36768772&scope=bot)
+- [Henchmen 1](https://discordapp.com/oauth2/authorize?client_id=704560792468586576&permissions=36768772&scope=bot)
+- [Henchmen 2](https://discordapp.com/oauth2/authorize?client_id=704560849947328573&permissions=36768772&scope=bot)
+- [Henchmen 3](https://discordapp.com/oauth2/authorize?client_id=704560872126676992&permissions=36768772&scope=bot)
+- [Henchmen 4](https://discordapp.com/oauth2/authorize?client_id=704560893207380010&permissions=36768772&scope=bot)
+- [Henchmen 5](https://discordapp.com/oauth2/authorize?client_id=704078743575986257&permissions=36768772&scope=bot)
 - [Coffin](https://discordapp.com/oauth2/authorize?client_id=704077241428082858&permissions=36766720&scope=bot)
 
 # How to setup
@@ -30,10 +30,17 @@ Simply type !g join in the voice channel you're in. (Be sure you have admin perm
 - If you leave voice chat, can return errors.
 
 # Changelogs
-- Changed duration from 20500 to 19500 for clients 1 - 6
-- Better Logging
-- Fixed packages.json whoops
-- Added nodemon and console-stamp
-- Added !g help
+**May 1st 2020**
+* Added !g ban <user mention> <reason> (popular request)
+  * Be sure to give Benjamin Aidoo Ban permissions
+  * Once executing the command, it will play the sound as normal, but after the music ends, the bot will ban the member and DM the member they have been banned 
+* Made command and arg definition that I just copied from discordjs.guide
+* Changed invite permissions to include Ban Members
+**April 29th 2020**
+* Changed duration from 20500 to 19500 for clients 1 - 6
+* Better Logging
+* Fixed packages.json whoops
+* Added nodemon and console-stamp
+* Added !g help
 
 Feel free to report any bugs to me at shaftAndi#1825 or [join my server and ask away in #bot-support](http://discord.gg/ZukG6P4)

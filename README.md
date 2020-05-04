@@ -29,6 +29,12 @@ Simply type !g join in the voice channel you're in. (Be sure you have admin perm
 - If called in multiple voice chats in the same server, can cause errors. 
 
 # Changelogs
+**May 4th 2020**
+* Merged pull request with [ExterminatorX99](https://github.com/ExterminatorX99)
+  * Clients 1 - 6 are now under a for loop, I wasn't smart enough to think like that
+  * Better formatting too
+* Changed permissions from just Administrator to Manage Channels.
+
 **May 1st 2020**
 * Added !g ban <user mention> <reason> (popular request)
   * Be sure to give Benjamin Aidoo Ban permissions

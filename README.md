@@ -27,7 +27,6 @@ Simply type !g join in the voice channel you're in. (Be sure you have admin perm
 
 # Current Bugs
 - If called in multiple voice chats in the same server, can cause errors. 
-- If you leave voice chat, can return errors.
 
 # Changelogs
 **May 1st 2020**

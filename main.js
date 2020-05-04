@@ -42,7 +42,7 @@ clients[0].on("message", async (message) => {
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 
-	if (command === "join" && message.member.hasPermission("ADMINISTRATOR")) {
+	if (command === "join" && message.member.hasPermission("MANAGE_CHANNELS")) {
 		console.log("Command for " + command + " Recieved in Server: " + guildName);
 
 		if (!message.member.voice.channel) {
@@ -89,9 +89,9 @@ clients[0].on("message", async (message) => {
 			member.ban(reason);
 			connection.disconnect();
 		});
-	} else if (command === "leave" && message.member.hasPermission("ADMINISTRATOR")) {
+	} else if (command === "leave" && message.member.hasPermission("MANAGE_CHANNELS")) {
 		message.member.voice.channel.leave();
-	} else if (command === "help" && message.member.hasPermission("ADMINISTRATOR")) {
+	} else if (command === "help") {
 		const helpEmbed = new Discord.MessageEmbed()
 			.setColor("#0099ff")
 			.setTitle("Ghana Funeral Meme Bots")
@@ -104,9 +104,18 @@ clients[0].on("message", async (message) => {
 			)
 			.setThumbnail("https://media1.tenor.com/images/c0bfc4509ae66de179e7499517031dc8/tenor.gif")
 			.addFields(
-				{ name: "- !g help", value: "This command..." },
-				{ name: "- !g join", value: "Joins the voice channel you are in" },
-				{ name: "- !g leave", value: "Leaves the voice channel incase needed!" },
+				{ 
+					name: "- !g help", 
+					value: "This command..." 
+				},
+				{ 
+					name: "- !g join", 
+				 	value: "Joins the voice channel you are in" 
+				},
+				{ 
+					name: "- !g leave", 
+					value: "Leaves the voice channel incase needed!" 
+				},
 				{
 					name: "- !g ban <tag user>",
 					value: "Bans the user while music is playing! Will DM the user that he has been banned."
@@ -121,7 +130,7 @@ function getFunc(botNum) {
 		const args = message.content.slice(prefix.length).split(/ +/);
 		const command = args.shift().toLowerCase();
 		if (
-			(command === "join" && message.member.hasPermission("ADMINISTRATOR")) ||
+			(command === "join" && message.member.hasPermission("MANAGE_CHANNELS")) ||
 			(command === "ban" && message.member.hasPermission("BAN_MEMBERS"))
 		) {
 			const channel = message.member.voice.channel;
@@ -135,7 +144,7 @@ function getFunc(botNum) {
 			connection.disconnect();
 			console.log("Client " + botNum + " has left voice chat");
 		}
-		if (command === "leave" && message.member.hasPermission("ADMINISTRATOR")) {
+		if (command === "leave" && message.member.hasPermission("MANAGE_CHANNELS")) {
 			message.member.voice.channel.leave();
 		}
 	};

@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-require('console-stamp')(console, '[HH:MM:ss.l]');
+require('console-stamp')(console, 'HH:MM:ss.l');
 const {
 	prefix,
 	token_coffin,
@@ -45,6 +45,10 @@ clients[0].on('message', async (message) => {
 	if (command === 'join' && message.member.hasPermission('ADMINISTRATOR')) {
 		console.log('Command for ' + command + ' Recieved in Server: ' + guildName);
 
+		if (!message.member.voice.channel) {
+			console.log('User not in voice channel');
+			return;
+		}
 		const connection = await message.member.voice.channel.join();
 		const dispatcher = connection.play('./Astronomia.mp3');
 
@@ -60,6 +64,10 @@ clients[0].on('message', async (message) => {
 		//Someone please fix this mess
 		console.log('Command for ' + command + ' Recieved in Server: ' + guildName);
 
+		if (!message.member.voice.channel) {
+			console.log('User not in voice channel');
+			return;
+		}
 		const connection = await message.member.voice.channel.join();
 		const dispatcher = connection.play('./Astronomia.mp3');
 
@@ -117,6 +125,9 @@ function getFunc(botNum) {
 			(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
 		) {
 			const channel = message.member.voice.channel;
+			if (!channel) {
+				return; // User not in voice channel
+			}
 			await sleep(19500);
 			console.log('Client ' + botNum + ' is joining voice chat');
 			const connection = await channel.join();

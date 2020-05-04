@@ -15,14 +15,16 @@ for (let i = 0; i < 7; i++) {
 	clients.push(new Discord.Client());
 }
 var tokens = [token_guy1, token_guy2, token_guy3, token_guy4, token_guy5, token_guy6, token_coffin];
+tokens.forEach((token) => {
+	if (!token) throw new Error(); // Crash if any token is empty
+});
 
-//Okay before I get destroyed, I suck at programming, Im already aware
+//Okay before I get destroyed, I suck at programming, I'm already aware
 
 for (var i = 0; i < clients.length; i++) {
 	clients[i].login(tokens[i]);
 	console.log('Client ' + i + ' has logged in.');
 }
-console.log('exit loop');
 
 clients[0].once('ready', () => {
 	console.log('Ready to run!');
@@ -45,15 +47,14 @@ clients[0].on('message', async (message) => {
 		const dispatcher = connection.play('./Astronomia.mp3');
 
 		dispatcher.on('start', () => {
-			console.log('Astronomia now playing in');
+			console.log('Astronomia now playing');
 		});
 
 		dispatcher.on('finish', () => {
 			console.log('Astronomia done playing');
 			connection.disconnect();
 		});
-	}
-	if (command === 'ban' && message.member.hasPermission('BAN_MEMBERS')) {
+	} else if (command === 'ban' && message.member.hasPermission('BAN_MEMBERS')) {
 		//Someone please fix this mess
 		console.log('Command for ' + command + ' Recieved in Server: ' + guildName);
 
@@ -78,11 +79,9 @@ clients[0].on('message', async (message) => {
 			member.ban(reason);
 			connection.disconnect();
 		});
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
+	} else if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
 		message.member.voice.channel.leave();
-	}
-	if (command === 'help' && message.member.hasPermission('ADMINISTRATOR')) {
+	} else if (command === 'help' && message.member.hasPermission('ADMINISTRATOR')) {
 		const helpEmbed = new Discord.MessageEmbed()
 			.setColor('#0099ff')
 			.setTitle('Ghana Funeral Meme Bots')
@@ -107,7 +106,7 @@ clients[0].on('message', async (message) => {
 	}
 });
 
-clients[1].on('message', async (message) => {
+const guys = async (message) => {
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	if (
@@ -115,108 +114,15 @@ clients[1].on('message', async (message) => {
 		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
 	) {
 		await sleep(19500);
-		console.log('Client 1 is joining voice chat');
 		const connection = await message.member.voice.channel.join();
 		await sleep(19000);
 		connection.disconnect();
-		console.log('Client 1 has left voice chat');
 	}
 	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
 		message.member.voice.channel.leave();
 	}
-});
+};
 
-clients[2].on('message', async (message) => {
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
-	if (
-		(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
-		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
-	) {
-		await sleep(19500);
-		console.log('Client 2 is joining voice chat');
-		const connection = await message.member.voice.channel.join();
-		await sleep(19000);
-		connection.disconnect();
-		console.log('Client 2 has left voice chat');
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.member.voice.channel.leave();
-	}
-});
-
-clients[3].on('message', async (message) => {
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
-	if (
-		(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
-		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
-	) {
-		await sleep(19500);
-		console.log('Client 3 is joining voice chat');
-		const connection = await message.member.voice.channel.join();
-		await sleep(19000);
-		connection.disconnect();
-		console.log('Client 3 has left voice chat');
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.member.voice.channel.leave();
-	}
-});
-
-clients[4].on('message', async (message) => {
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
-	if (
-		(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
-		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
-	) {
-		await sleep(19500);
-		console.log('Client 4 is joining voice chat');
-		const connection = await message.member.voice.channel.join();
-		await sleep(19000);
-		connection.disconnect();
-		console.log('Client 4 has left voice chat');
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.member.voice.channel.leave();
-	}
-});
-
-clients[5].on('message', async (message) => {
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
-	if (
-		(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
-		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
-	) {
-		await sleep(19500);
-		console.log('Client 5 is joining voice chat');
-		const connection = await message.member.voice.channel.join();
-		await sleep(19000);
-		connection.disconnect();
-		console.log('Client 5 has left voice chat');
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.member.voice.channel.leave();
-	}
-});
-
-clients[6].on('message', async (message) => {
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
-	if (
-		(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
-		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
-	) {
-		await sleep(19500);
-		console.log('Client 6 is joining voice chat');
-		const connection = await message.member.voice.channel.join();
-		await sleep(19000);
-		connection.disconnect();
-		console.log('Client 6 has left voice chat');
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.member.voice.channel.leave();
-	}
-});
+for (let i = 1; i < 7; i++) {
+	clients[i].on('message', guys);
+}

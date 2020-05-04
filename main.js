@@ -46,8 +46,7 @@ clients[0].on("message", async (message) => {
 		console.log("Command for " + command + " Recieved in Server: " + guildName);
 
 		if (!message.member.voice.channel) {
-			console.log("User not in voice channel");
-			return;
+			return message.reply("You're not in any voice channel");
 		}
 		const connection = await message.member.voice.channel.join();
 		const dispatcher = connection.play("./Astronomia.mp3");
@@ -64,13 +63,6 @@ clients[0].on("message", async (message) => {
 		//Someone please fix this mess
 		console.log("Command for " + command + " Recieved in Server: " + guildName);
 
-		if (!message.member.voice.channel) {
-			console.log("User not in voice channel");
-			return;
-		}
-		const connection = await message.member.voice.channel.join();
-		const dispatcher = connection.play("./Astronomia.mp3");
-
 		let member = message.mentions.members.first();
 		if (!member) return message.reply("Please mention a valid member of this server");
 		if (!member.bannable)
@@ -78,6 +70,14 @@ clients[0].on("message", async (message) => {
 
 		let reason = args.slice(1).join(" ");
 		if (!reason) reason = "No reason provided";
+
+		let channel = member.voice.channel; // Join voice channel of person to be banned
+		if (!channel) channel = message.member.voice.channel; // Join message sender if to be banned person isn't in voice chat
+		if (!channel) {
+			return message.reply("Neither you or the person you are trying to ban are in a voice chat");
+		}
+		const connection = await member.voice.channel.join();
+		const dispatcher = connection.play("./Astronomia.mp3");
 
 		dispatcher.on("start", () => {
 			console.log("Astronomia now playing in");

@@ -15,9 +15,11 @@ for (let i = 0; i < 7; i++) {
 	clients.push(new Discord.Client());
 }
 var tokens = [token_guy1, token_guy2, token_guy3, token_guy4, token_guy5, token_guy6, token_coffin];
-tokens.forEach((token) => {
-	if (!token) throw new Error(); // Crash if any token is empty
-});
+for (let i = 0; i < tokens.length; i++) {
+	if (!tokens[i]) {
+		throw new Error('Token ' + (i + 1) + ' is empty'); // Crash if any token is empty
+	}
+}
 
 //Okay before I get destroyed, I suck at programming, I'm already aware
 
@@ -106,23 +108,28 @@ clients[0].on('message', async (message) => {
 	}
 });
 
-const guys = async (message) => {
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
-	if (
-		(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
-		(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
-	) {
-		await sleep(19500);
-		const connection = await message.member.voice.channel.join();
-		await sleep(19000);
-		connection.disconnect();
-	}
-	if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
-		message.member.voice.channel.leave();
-	}
-};
+function getFunc(botNum) {
+	return async (message) => {
+		const args = message.content.slice(prefix.length).split(/ +/);
+		const command = args.shift().toLowerCase();
+		if (
+			(command === 'join' && message.member.hasPermission('ADMINISTRATOR')) ||
+			(command === 'ban' && message.member.hasPermission('BAN_MEMBERS'))
+		) {
+			const channel = message.member.voice.channel;
+			await sleep(19500);
+			console.log('Client ' + botNum + ' is joining voice chat');
+			const connection = await channel.join();
+			await sleep(19000);
+			connection.disconnect();
+			console.log('Client ' + botNum + ' has left voice chat');
+		}
+		if (command === 'leave' && message.member.hasPermission('ADMINISTRATOR')) {
+			message.member.voice.channel.leave();
+		}
+	};
+}
 
-for (let i = 1; i < 7; i++) {
-	clients[i].on('message', guys);
+for (let i = 1; i < clients.length; i++) {
+	clients[i].on('message', getFunc(i));
 }

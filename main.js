@@ -10,15 +10,10 @@ const {
 	token_guy5,
 	token_guy6
 } = require('./config.json');
-const clients = [
-	new Discord.Client(),
-	new Discord.Client(),
-	new Discord.Client(),
-	new Discord.Client(),
-	new Discord.Client(),
-	new Discord.Client(),
-	new Discord.Client()
-];
+const clients = [];
+for (let i = 0; i < 7; i++) {
+	clients.push(new Discord.Client());
+}
 var tokens = [token_guy1, token_guy2, token_guy3, token_guy4, token_guy5, token_guy6, token_coffin];
 
 //Okay before I get destroyed, I suck at programming, Im already aware

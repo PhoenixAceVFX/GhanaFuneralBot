@@ -48,4 +48,4 @@ Simply type !g join in the voice channel you're in. (Be sure you have admin perm
 * Added nodemon and console-stamp
 * Added !g help
 
-Feel free to report any bugs to me at shaftAndi#1825 or [join my server and ask away in #bot-support](http://discord.gg/ZukG6P4)
+Feel free to report any bugs to me at shaftAndi#1825

@@ -26,6 +26,7 @@ Run the bot simply with `<nodemon main.js >`
 # How to use
 
 Simply type !g join in the voice channel you're in. (Be sure you have admin permission) 
+do !g ban @user to ban them in style!  
 
 # Current Bugs
 - If called in multiple voice chats in the same server, can cause errors. 

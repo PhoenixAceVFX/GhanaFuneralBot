@@ -8,13 +8,13 @@ A Discord Bot that takes 7 tokens to mass join 1 voice channel to play Astronomi
 # Invite
 If you don't wish to self-host, that's alright. Here are the invite links to all the bots! Grab them quick before 100 servers take them all!
 
-- [Main Bot](https://discord.com/api/oauth2/authorize?client_id=846423187810025522&permissions=8&scope=bot)
-- [Henchmen 1](https://discord.com/api/oauth2/authorize?client_id=846423445214068756&permissions=8&scope=bot)
-- [Henchmen 2](https://discord.com/api/oauth2/authorize?client_id=846423601725177898&permissions=8&scope=bot)
-- [Henchmen 3](https://discord.com/api/oauth2/authorize?client_id=846423729882005544&permissions=8&scope=bot)
-- [Henchmen 4](https://discord.com/api/oauth2/authorize?client_id=846423842913255434&permissions=8&scope=bot)
-- [Henchmen 5](https://discord.com/api/oauth2/authorize?client_id=846423947305287711&permissions=8&scope=bot)
-- [Coffin](https://discord.com/api/oauth2/authorize?client_id=846424485632409671&permissions=8&scope=bot)
+- [Main Bot](https://discord.com/api/oauth2/authorize?client_id=846423187810025522&permissions=36719622&scope=bot)
+- [Henchmen 1](https://discord.com/api/oauth2/authorize?client_id=846423445214068756&permissions=36719622&scope=bot)
+- [Henchmen 2](https://discord.com/api/oauth2/authorize?client_id=846423601725177898&permissions=36719622&scope=bot)
+- [Henchmen 3](https://discord.com/api/oauth2/authorize?client_id=846423729882005544&permissions=36719622&scope=bot)
+- [Henchmen 4](https://discord.com/api/oauth2/authorize?client_id=846423842913255434&permissions=36719622&scope=bot)
+- [Henchmen 5](https://discord.com/api/oauth2/authorize?client_id=846423947305287711&permissions=36719622&scope=bot)
+- [Coffin](https://discord.com/api/oauth2/authorize?client_id=846424485632409671&permissions=36719622&scope=bot)
 
 # How to setup
 Clone the repo and be sure you have nodejs version 12.0 or later installed.
